@@ -2,8 +2,12 @@
 
 /******************************************************************************/
 
-const convertToBase2 = element => {
-  // Your code here
+const convertToBase2 = el => {
+  if (el[1] !== "x") {
+    if (el <= 1) return "0b" + el;
+    return convertToBase2(Math.floor(el / 2)) + [el % 2];
+  }
+    return "0b" + parseInt(el, 16).toString(2);
 };
 
 /******************************************************************************/
@@ -21,3 +25,4 @@ console.log(convertToBase2('0xfa')); // 0b11111010
 console.log(convertToBase2('0x1234')); // 0b1001000110100
 console.log(convertToBase2('0xc9a1')); // 0b1100100110100001
 console.log(convertToBase2('0xbf12')); // 0b1011111100010010
+

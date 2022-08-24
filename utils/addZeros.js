@@ -18,4 +18,15 @@ const addZeros = (str, newLength) => {
   }
 };
 
-module.exports = addZeros;
+const base2ToDigit = (str) => {
+  let total = 0;
+  for (let i = str.length - 1, count = 0; i > 1; i--, count++) {
+    total += (2 ** count * str[i]);
+  }
+  return total;
+}
+
+module.exports = {
+  addZeros,
+  base2ToDigit
+}

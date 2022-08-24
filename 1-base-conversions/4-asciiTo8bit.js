@@ -1,4 +1,4 @@
-const addZeros = require('../utils/addZeros');
+const { addZeros } = require('../utils/addZeros');
 
 // Translate the ASCII strings in the console.logs below to 8-bit binary strings
 // Implement the imported helper function addZeros()
@@ -7,7 +7,12 @@ const addZeros = require('../utils/addZeros');
 /******************************************************************************/
 
 const asciiTo8bit = str => {
-  // Your code here
+  let num = [];
+  for (let i = str.length - 1; i >= 0; i--) {
+    let char = str.charCodeAt(i);
+    num.unshift(addZeros(char.toString(2), 8));
+  }
+  return num.join('');
 };
 
 /******************************************************************************/

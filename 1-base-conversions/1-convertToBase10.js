@@ -1,10 +1,14 @@
 // Convert the integers in the console.logs below to base 10:
-
+const { base2ToDigit } = require('../utils/addZeros');
 /******************************************************************************/
 
 const convertToBase10 = str => {
-  // Your code here
-};
+  if (str[1] === 'b') {
+    return base2ToDigit(str);
+  } else if (str[1] === 'x') {
+    return Number(str);
+  }
+}
 
 /******************************************************************************/
 
